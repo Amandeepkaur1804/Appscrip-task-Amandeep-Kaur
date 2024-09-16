@@ -30,6 +30,12 @@ const dropDownOptions = [
 export default function WebPLPWithFilterPage() {
   const [isFilterVisible, setIsFilterVisible] = useState(true);
 
+  const [isBrowser, setIsBrowser] = useState(false);
+  // Only run this code in the browser
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
+
   const handleFilterClick = () => {
     setIsFilterVisible(!isFilterVisible);
   };
